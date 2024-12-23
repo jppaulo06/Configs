@@ -1,0 +1,18 @@
+[window]
+padding = { x = 10, y = 10 }
+opacity = 0.8
+startup_mode = "Maximized"
+decorations_theme_variant = "Dark"
+decorations = "None"
+
+#title = ""
+#dynamic_title = false
+
+[font]
+size=15
+
+[terminal]
+shell = "tmux"
+
+[mouse]
+hide_when_typing = true
