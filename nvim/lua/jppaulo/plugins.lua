@@ -1,5 +1,4 @@
 return require("packer").startup(function(use)
-    -- This is usefull to make packer update itself
     use "wbthomason/packer.nvim"
 
     -- All natural pine, faux fur and a bit of soho vibes for the classy
@@ -16,6 +15,8 @@ return require("packer").startup(function(use)
         "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } }
     }
+
+    use("nvim-telescope/telescope-ui-select.nvim")
 
     -- A pretty list for showing diagnostics, references, telescope results,
     -- quickfix and location lists to help you solve all the trouble your code is
@@ -52,7 +53,7 @@ return require("packer").startup(function(use)
         "neovim/nvim-lspconfig",
         "L3MON4D3/LuaSnip",
         "hrsh7th/cmp-nvim-lsp",
-        "hrsh7th/nvim-cmp"
+        "hrsh7th/nvim-cmp",
     }
 
     -- Lint and format
@@ -101,6 +102,16 @@ return require("packer").startup(function(use)
             end
         })
 
+    -- This plugin automatically adjusts 'shiftwidth' and 'expandtab'
+    -- heuristically based on the current file, or, in the case the current
+    -- file is new, blank, or otherwise insufficient, by looking at other files
+    -- of the same type in the current and parent directories
+    use("tpope/vim-sleuth")
+
+    use("stevearc/conform.nvim")
+
     use("github/copilot.vim")
     use("CopilotC-Nvim/CopilotChat.nvim")
+
+    -- use("folke/todo-comments.nvim")
 end)
