@@ -30,8 +30,6 @@ return require("packer").startup(function(use)
         end
     })
 
-    use("theprimeagen/refactoring.nvim")
-
     -- Undotree visualizes the undo history and makes it easy to browse and
     -- switch between different undo branches. You may be wondering, what are
     -- undo "branches" anyway? They"re a feature of Vim that allow you to go back
@@ -56,13 +54,7 @@ return require("packer").startup(function(use)
         "hrsh7th/nvim-cmp",
     }
 
-    -- Lint and format
-    use {
-        "nvimdev/guard.nvim",
-        requires = {
-            "nvimdev/guard-collection"
-        }
-    }
+    use("stevearc/conform.nvim")
 
     -- Pretty stuff
     use("nvim-treesitter/nvim-treesitter", { run = "TSUpdate" })
@@ -114,4 +106,12 @@ return require("packer").startup(function(use)
     use("CopilotC-Nvim/CopilotChat.nvim")
 
     -- use("folke/todo-comments.nvim")
+
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            { "nvim-lua/plenary.nvim" },
+            { "nvim-treesitter/nvim-treesitter" }
+        }
+    }
 end)
